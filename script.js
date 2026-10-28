@@ -28,7 +28,7 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday", "Friday", "Sa
 let day = days[d.getDay()];
 // STEP 5: Display the day name in the element with ID "warmUpDate"
 //         using document.getElementById("warmUpDate").innerHTML
-document.getElementById("warmUpDate").innerHTML = days[day];
+document.getElementById("warmUpDate").innerHTML = day;
 
 // ============================================
 //  PART 1: Current Date Display
