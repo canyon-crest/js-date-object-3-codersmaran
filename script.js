@@ -69,7 +69,10 @@ let start = new Date().getTime();
 //          c) Display the elapsed time using .toFixed(3)
 //             in the element with ID "myTimer"
 // let running = true;
-let interval = setInterval(start, 10);
+interval = setInterval(function() {
+    let current = new Date().getTime();
+    document.getElementById("myTimer").innerHTML = ((current - start) / 1000).toFixed(3);
+}, 10);
 let current = new Date().getTime();
 document.getElementById("myTimer").innerHTML = ((current - start) / 1000).toFixed(3);
 
@@ -89,10 +92,16 @@ let running = true;
 myBtn.addEventListener('click',function() {
     if (running) {
         clearInterval(interval);
-        document.getElementById("myBtn")
+        document.getElementById("myBtn").innerHTML = "Start";
         running = false;
     } else {
-        interval = setInterval(time, 10);
+        start = new Date().getTime();
+        interval = setInterval(function() {
+            let current = new Date().getTime();
+            document.getElementById("myTimer").innerHTML = ((current - start) / 1000).toFixed(3);
+        }, 10);
+        
+        myBtn.innerHTML = "Stop";
         running = true;
     }
 });
